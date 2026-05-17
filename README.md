@@ -138,6 +138,20 @@ Cada paso tiene un **control de calidad**: no puedes avanzar al siguiente si el 
 6. **Documentación como ciudadano de primera clase** — no es opcional
 7. **Documentación de entrega sincronizada siempre** — cada cambio en el proyecto actualiza automáticamente los documentos que se entregan al cliente
 
+## 📦 Cómo usar sin interferir con el repositorio del framework
+
+El framework tiene su propio repo en GitHub. Cuando lo uses para un proyecto de cliente, **no se mezclan**:
+
+```
+1. COPIA la carpeta del framework dentro de tu proyecto de cliente
+2. Los templates .github/ son para el proyecto del cliente (no afectan al framework)
+3. Los proyectos creados con scripts/new-project.sh van a projects/ (ignorado por git)
+4. La documentación generada (docs/delivery/, docs/sprints/, docs/progress/)
+   se ignora automáticamente — no se sube al repo del framework
+```
+
+**El `.gitignore` ya está configurado** para ignorar todo lo que pertenece al proyecto y no al framework. No necesitas hacer nada adicional.
+
 ## Cómo contribuir
 
 Para contribuir, revisa la estructura del proyecto y envía un pull request con tus mejoras.
