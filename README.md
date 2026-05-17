@@ -117,6 +117,18 @@ Cada paso tiene un **control de calidad**: no puedes avanzar al siguiente si el 
 │   │       └── security-compliance-template.md
 │   └── architecture/
 │
+├── project-template/                    # Plantilla para nuevos proyectos (cópiala a otra carpeta)
+│   ├── context/
+│   │   └── project-context.md
+│   ├── decisions/
+│   │   └── adr-template.md
+│   ├── docs/
+│   │   ├── delivery/
+│   │   ├── sprints/
+│   │   └── progress/
+│   ├── sessions/
+│   └── README.md
+│
 ├── examples/
 │   └── example-project-context.md      # Ejemplo de contexto completado
 │
@@ -138,19 +150,38 @@ Cada paso tiene un **control de calidad**: no puedes avanzar al siguiente si el 
 6. **Documentación como ciudadano de primera clase** — no es opcional
 7. **Documentación de entrega sincronizada siempre** — cada cambio en el proyecto actualiza automáticamente los documentos que se entregan al cliente
 
-## 📦 Cómo usar sin interferir con el repositorio del framework
+## 📁 Cómo usar (solo copiar y pegar)
 
-El framework tiene su propio repo en GitHub. Cuando lo uses para un proyecto de cliente, **no se mezclan**:
+Crea **dos carpetas separadas** en tu computadora:
 
 ```
-1. COPIA la carpeta del framework dentro de tu proyecto de cliente
-2. Los templates .github/ son para el proyecto del cliente (no afectan al framework)
-3. Los proyectos creados con scripts/new-project.sh van a projects/ (ignorado por git)
-4. La documentación generada (docs/delivery/, docs/sprints/, docs/progress/)
-   se ignora automáticamente — no se sube al repo del framework
+📁 agente/              ← Copia todo el framework aquí (una sola vez)
+📁 mi-proyecto/         ← Copia project-template/ aquí (un proyecto a la vez)
 ```
 
-**El `.gitignore` ya está configurado** para ignorar todo lo que pertenece al proyecto y no al framework. No necesitas hacer nada adicional.
+### Paso a paso
+
+```
+1. COPIA toda esta carpeta y pégala en una carpeta llamada "agente"
+
+2. COPIA la carpeta "project-template/" y pégala en otra carpeta
+   llamada "mi-proyecto" (o el nombre de tu proyecto)
+
+3. En "mi-proyecto", completa context/project-context.md
+   con los datos de tu proyecto
+
+4. Abre "agente/agent/core/agent.md", copia todo su contenido (839 líneas)
+   y pégalo como system prompt en ChatGPT o Claude
+
+5. Dile al agente:
+   "Hola, aquí está el contexto de mi proyecto: [pega el contenido
+   de mi-proyecto/context/project-context.md]"
+
+6. El agente comenzará automáticamente la entrevista (Fase 0)
+   y te guiará hasta la entrega final
+```
+
+**El agente y el proyecto NUNCA se mezclan** porque están en carpetas separadas.
 
 ## Cómo contribuir
 
