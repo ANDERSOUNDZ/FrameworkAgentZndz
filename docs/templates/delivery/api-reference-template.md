@@ -4,6 +4,16 @@
 > **Fecha:** [YYYY-MM-DD]
 > **Base URL:** `[https://api.ejemplo.com/v1]`
 > **Audiencia:** Desarrolladores que integran con el sistema
+>
+> 📝 **¿Cómo se genera este documento?**
+> El agente SDLC lo construye durante las Fases 2, 3 y 7.
+> En Fase 2 crea los contratos de API (diseño). En Fase 3 los actualiza
+> con los endpoints reales implementados. En Fase 7 valida contra el código.
+>
+> ✅ **¿Qué debe cumplir para estar completo?**
+> - Cada endpoint debe tener request y response de ejemplo
+> - Los códigos de error deben estar documentados
+> - Los ejemplos deben poder copiarse y ejecutarse (curl o similar)
 
 ---
 

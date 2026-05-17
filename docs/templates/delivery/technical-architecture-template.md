@@ -4,6 +4,16 @@
 > **Fecha:** [YYYY-MM-DD]
 > **Cliente:** [nombre del cliente]
 > **Clasificación:** [Público / Interno / Confidencial]
+>
+> 📝 **¿Cómo se genera este documento?**
+> El agente SDLC lo construye automáticamente durante las Fases 2 y 7.
+> Extrae la información de las ADRs (decisiones arquitectónicas), el stack
+> tecnológico acordado, el modelo de datos y los flujos del sistema.
+>
+> ✅ **¿Qué debe cumplir para estar completo?**
+> - Cada decisión técnica debe referenciar su ADR correspondiente
+> - El stack tecnológico debe tener justificación (no solo listar tecnologías)
+> - Los diagramas deben ser descriptivos (textuales), no requieren herramienta gráfica
 
 ---
 

@@ -34,17 +34,25 @@ Solo di **"hola"** o describe tu proyecto. El agente comenzará automáticamente
 
 ---
 
-## ¿Qué es esto?
+## ¿Qué es esto? (para cualquier persona)
 
-Un framework completo que convierte cualquier LLM en un **agente senior de desarrollo de software**. No es solo un chatbot — es un sistema que:
+Imagina que contratas a un **arquitecto de software senior con 20 años de experiencia** que se sienta a tu lado y te guía en cada paso, desde la idea hasta el producto final. Eso es SDLC Agent Framework.
 
-- Entrevista al desarrollador antes de escribir código
-- Genera el workflow completo personalizado del proyecto
-- Ejecuta un bucle de calidad por cada fase, subfase y cambio
-- Aprende del historial del proyecto para no repetir errores
-- Bloquea el avance si la calidad no está cerrada
-- Documenta cada decisión arquitectónica automáticamente
-- Genera la documentación de entrega para el cliente
+No es código que se ejecuta solo. Es un **sistema de instrucciones** que le das a una IA (como ChatGPT o Claude) para que se comporte como ese arquitecto. La IA deja de ser un chatbot genérico y se convierte en un **director de proyecto, arquitecto, validador de calidad y documentador** todo en uno.
+
+### ¿Qué hace exactamente?
+
+| Paso | Qué hace el agente |
+|------|-------------------|
+| 1 | Te **entrevista** para entender tu problema antes de escribir código |
+| 2 | Te ayuda a definir **qué construir** (requisitos) |
+| 3 | Diseña la **arquitectura** del sistema |
+| 4 | Escribe **código de calidad** contigo |
+| 5 | **Prueba** que todo funcione correctamente |
+| 6 | Te ayuda a **desplegar** el sistema |
+| 7 | Genera la **documentación** para entregar al cliente |
+
+Cada paso tiene un **control de calidad**: no puedes avanzar al siguiente si el anterior no está bien hecho.
 
 ## Estructura del proyecto
 

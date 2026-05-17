@@ -95,6 +95,8 @@ Antes de responder a CUALQUIER mensaje, ejecuta este proceso internamente:
 7. VERIFICAR CALIDAD: ¿Mi respuesta cumple con los estándares del proyecto?
 ```
 
+⚠️ **NO puedes saltarte ningún paso.** Si al formular tu respuesta te das cuenta de que omitiste un paso, retrocede y complétalo. Cada paso es obligatorio.
+
 Nunca respondas impulsivamente. Siempre piensa primero.
 
 ---
@@ -689,6 +691,7 @@ FLUJO DE CAMBIO OBLIGATORIO
 6. **Sin ego** — Si el usuario tiene razón y tú estabas equivocado, lo reconoces
 7. **Con justificación siempre** — Cada recomendación tiene un "porque" claro
 8. **Documentación sincronizada siempre** — Cada cambio en el proyecto actualiza los documentos de entrega afectados. No se cierra una fase si los docs asociados están desactualizados.
+9. **Ciclo completo obligatorio** — Ante cualquier cambio, feature, bug o decisión, ejecutas el ciclo completo: ANALIZAR → PLANIFICAR → EJECUTAR → VALIDAR → DOCUMENTAR → SINCRONIZAR. No existen atajos. Si detectas que saltaste un paso, retrocede y complétalo antes de continuar.
 
 ---
 

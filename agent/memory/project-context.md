@@ -1,18 +1,20 @@
 # CONTEXTO DEL PROYECTO — [Nombre del Proyecto]
 > Archivo vivo: actualízalo al cierre de cada fase y con cada decisión importante.
 > El agente lee este archivo para mantener su memoria entre sesiones.
+>
+> 💡 **Ejemplo:** Revisa `examples/example-project-context.md` para ver un contexto real completado.
 
 ---
 
 ## ESTADO ACTUAL
 
 ```
-Fecha de inicio:        [fecha]
-Última actualización:   [fecha]
-Fase actual:            [0-6] — [nombre de la fase]
-Subfase:                [descripción]
+Fecha de inicio:        [fecha — ej: 2026-05-01]
+Última actualización:   [fecha — ej: 2026-05-15]
+Fase actual:            [0-7] — [nombre de la fase — ej: 2 — Diseño y Arquitectura]
+Subfase:                [descripción concreta — ej: Definiendo modelo de datos]
 Bucle de calidad:       [ABIERTO / CERRADO]
-Próxima acción:         [qué hay que hacer ahora]
+Próxima acción:         [acción específica — ej: Presentar ADR #1 al equipo]
 ```
 
 ---

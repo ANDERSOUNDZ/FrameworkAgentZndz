@@ -4,9 +4,13 @@
 
 ---
 
-## ¿Qué es el proceso de entrega?
+## ¿Qué es el proceso de entrega? (para el cliente)
 
-Es el mecanismo por el cual el framework **genera documentación profesional para el cliente** de forma automática y sincronizada con el desarrollo del proyecto. No es un esfuerzo extra — es parte integral del SDLC.
+Cuando terminas un proyecto de software, el cliente necesita algo más que código. Necesita entender cómo funciona el sistema, cómo usarlo, cómo desplegarlo y cómo mantenerlo.
+
+Este proceso **genera automáticamente** toda esa documentación mientras desarrollas. No es trabajo extra que haces al final — la documentación se construye sola a medida que avanzas.
+
+**El resultado**: un paquete profesional de documentos listos para entregar al cliente, sin que tengas que sentarte a escribirlos manualmente.
 
 ---
 

@@ -145,6 +145,19 @@ Antes de implementar:
     - [ ] Release Notes
     - [ ] Otros docs afectados
 
+Durante:
+- Actualizar user stories afectadas con los nuevos criterios
+- Revisar si el cambio requiere nueva ADR o modificar una existente
+- Ejecutar pruebas existentes para verificar que no se rompió nada antes del cambio
+
+Después:
+- [ ] User stories actualizadas o creadas reflejan el nuevo requerimiento
+- [ ] ADR documentada si el cambio afecta decisiones arquitectónicas
+- [ ] Las pruebas existentes siguen pasando
+- [ ] Nuevas pruebas escritas para el nuevo comportamiento (si aplica)
+- [ ] Docs de entrega afectados actualizados
+- [ ] project-context.md actualizado: riesgos, decisiones, métricas
+
 ### Merge de feature / Pull Request
 **Definición:** Integrar código nuevo a la rama principal.
 **Riesgo principal:** Conflictos de integración o regresiones no detectadas.

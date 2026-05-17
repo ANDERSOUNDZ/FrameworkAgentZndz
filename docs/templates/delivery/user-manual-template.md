@@ -2,7 +2,19 @@
 
 > **Versión:** [versión del software]
 > **Fecha:** [YYYY-MM-DD]
-> **Audiencia:** Usuarios finales del sistema
+> **Audiencia:** Usuarios finales del sistema (no técnicos)
+>
+> 📝 **¿Cómo se genera este documento?**
+> El agente SDLC lo construye automáticamente durante las Fases 1, 3 y 7.
+> No lo escribes tú. El agente extrae la información de las user stories,
+> las funcionalidades implementadas y las decisiones de diseño, y las
+> convierte en instrucciones paso a paso para el usuario final.
+>
+> ✅ **¿Qué debe cumplir este documento para estar completo?**
+> - Sin jerga técnica (el usuario no es programador)
+> - Instrucciones paso a paso que cualquier persona pueda seguir
+> - Capturas de pantalla (o descripciones textuales) de cada pantalla
+> - Términos explicados en el glosario
 
 ---
 

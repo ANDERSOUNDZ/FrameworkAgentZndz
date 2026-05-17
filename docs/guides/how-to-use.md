@@ -113,7 +113,7 @@ framework:
 
 **No omitas la Fase 0.** La entrevista inicial parece tiempo perdido pero evita semanas de desarrollo en la dirección equivocada.
 
-**Actualiza el contexto regularmente.** El archivo `context.md` es la memoria del agente. Si no lo actualizas, el agente pierde el hilo entre sesiones.
+**Actualiza el contexto regularmente.** El archivo `context/project-context.md` es la memoria del agente. Si no lo actualizas, el agente pierde el hilo entre sesiones.
 
 **Respeta el bloqueo del bucle.** Si el agente dice que no puede avanzar, no lo ignores. Los ítems bloqueantes siempre tienen razón de ser.
 
@@ -124,13 +124,13 @@ framework:
 ## Solución de problemas comunes
 
 **El agente no recuerda decisiones anteriores:**
-→ Comparte el `context.md` al inicio de la sesión. Los LLMs no tienen memoria persistente entre conversaciones.
+→ Comparte el `context/project-context.md` al inicio de la sesión. Los LLMs no tienen memoria persistente entre conversaciones.
 
 **El agente está siendo demasiado estricto:**
 → Es correcto que sea estricto. Si crees que un criterio no aplica a tu proyecto, discútelo con el agente — puede ajustar el enfoque con justificación.
 
 **No sé en qué fase estoy:**
-→ Consulta la tabla "Estado de Fases" en tu `context.md`. Si no está actualizada, pregunta al agente.
+→ Consulta la tabla "Estado de Fases" en tu `context/project-context.md`. Si no está actualizada, pregunta al agente.
 
 **El agente generó código sin entrevista:**
 → Esto no debería pasar si el system prompt está correctamente configurado. Verifica que el contenido completo de `../../agent/core/agent.md` esté en las instrucciones.
