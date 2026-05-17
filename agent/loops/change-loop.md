@@ -90,6 +90,7 @@ Después:
 - [ ] El comportamiento externo es idéntico
 - [ ] El código es notablemente más limpio/simple
 - [ ] Docs de entrega afectados actualizados (si cambió estructura o interfaces)
+- [ ] GitHub sincronizado: issue actualizado, PR mergeado si aplica
 
 ### Optimización de rendimiento
 **Definición:** Mejorar velocidad, memoria o recursos sin cambiar funcionalidad.
@@ -108,6 +109,7 @@ Después:
 - [ ] Mejora medida y documentada (N% más rápido)
 - [ ] Sin regresiones funcionales
 - [ ] La optimización es comprensible para el equipo
+- [ ] GitHub sincronizado: issue actualizado, PR mergeado si aplica
 
 ### Corrección de bug
 **Definición:** Corregir comportamiento incorrecto del sistema.
@@ -128,6 +130,7 @@ Después:
 - [ ] Se documentó en "Errores Aprendidos" si fue significativo
 - [ ] Release Notes actualizadas con la corrección
 - [ ] Manual de Usuario actualizado si el bug afectaba flujos de usuario
+- [ ] GitHub sincronizado: issue cerrado, PR mergeado
 
 ### Cambio de requerimientos
 **Definición:** El usuario o negocio cambia qué debe hacer el sistema.
@@ -157,6 +160,9 @@ Después:
 - [ ] Nuevas pruebas escritas para el nuevo comportamiento (si aplica)
 - [ ] Docs de entrega afectados actualizados
 - [ ] project-context.md actualizado: riesgos, decisiones, métricas
+- [ ] GitHub sincronizado: issue creado/actualizado, milestone ajustado
+
+
 
 ### Merge de feature / Pull Request
 **Definición:** Integrar código nuevo a la rama principal.
@@ -177,6 +183,7 @@ Después:
 - [ ] La rama feature se eliminó (si aplica)
 - [ ] Release Notes actualizadas con la nueva feature
 - [ ] Docs de entrega afectados actualizados (Manual de Usuario, API Reference)
+- [ ] GitHub sincronizado: PR mergeado, issue cerrado
 
 ### Actualización de dependencias
 **Definición:** Actualizar librerías, paquetes o herramientas del proyecto.
@@ -196,6 +203,7 @@ Después:
 - [ ] No hay funcionalidades rotas por el cambio de versión
 - [ ] Se documentó en Release Notes si hubo cambio mayor
 - [ ] docs/delivery/04-deployment-guide.md actualizado si cambian requisitos de infraestructura
+- [ ] GitHub sincronizado: issue creado para seguimiento (si es cambio significativo)
 
 ### Cambio en documentación de entrega
 **Definición:** Modificar, corregir o completar documentos de entrega del proyecto.
@@ -214,6 +222,7 @@ Después:
 - [ ] El documento modificado pasó el validador de documentación (documentation-validator.md)
 - [ ] Todos los documentos que referencian la misma información están consistentes
 - [ ] project-context.md refleja el nuevo estado del documento
+- [ ] GitHub sincronizado: issue de documentación actualizado si existe
 
 ---
 

@@ -60,6 +60,13 @@ Cada paso tiene un **control de calidad**: no puedes avanzar al siguiente si el 
 /
 ├── README.md                           # Este archivo
 │
+├── .github/                            # Integración con GitHub
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── feature.md                  # Template para issues de features
+│   │   ├── bug.md                      # Template para issues de bugs
+│   │   └── task.md                     # Template para issues de tareas técnicas
+│   └── PULL_REQUEST_TEMPLATE.md        # Template para pull requests
+│
 ├── agent/                              # Núcleo del agente
 │   ├── core/
 │   │   └── agent.md                    # ⭐ ARCHIVO MAESTRO (system prompt)

@@ -714,6 +714,42 @@ Docs desincronizados:    [N] (objetivo: 0)
 
 ---
 
+## GESTIÓN DE GITHUB
+
+El agente también gestiona el proyecto en GitHub: issues, milestones, branches, pull requests y releases.
+
+Consulta la herramienta completa en `../tools/github-manager.md`.
+
+### Reglas GitHub
+
+1. **Cada user story = 1 issue** — al aprobarse en Fase 1, se crea un issue con label `feature`
+2. **Cada bug = 1 issue** — al detectarse, se crea un issue con label `bug` usando la plantilla
+3. **Cada deuda técnica = 1 issue** — al identificarse, se crea un issue con label `task`
+4. **Cada feature = 1 branch + 1 PR** — al desarrollarse, se crea branch desde el issue y PR al completar
+5. **Cada fase = 1 milestone** — los issues se asignan al milestone de la fase correspondiente
+6. **Cada release = 1 GitHub Release** — al desplegar, se crea una release con release notes
+
+### Flujo GitHub en cada fase
+
+```
+Fase 0 → Preguntar: "¿Tienes repo en GitHub? Dame la URL"
+Fase 1 → gh issue create por cada user story (con label de prioridad)
+Fase 2 → gh api milestones: crear milestones por fase, asignar issues
+Fase 3 → gh issue develop + gh pr create por cada feature
+Fase 4 → gh pr merge + gh issue close (QA aprobado)
+Fase 5 → gh release create v1.0.0
+Fase 6 → gh issue create para bugs + gh pr create para fixes
+Fase 7 → Verificar issues cerrados, milestones completados
+```
+
+Al inicio de cada sesión, muestra también el estado GitHub:
+
+```
+📊 GITHUB — [N] issues abiertos | [N] PRs abiertos | Última release: [vX]
+```
+
+---
+
 ## TRANSICIÓN ENTRE FASES
 
 Cada vez que se CIERRA una fase (bucle de calidad = CERRADO), sigue este proceso obligatorio:

@@ -136,6 +136,7 @@ Copia este resumen al project-context.md antes de cerrar.
 | `docs/delivery/06-release-notes.md` | Nueva versión, feature completada, bug corregido |
 | `docs/delivery/07-admin-guide.md` | Cambio en roles, permisos, config del sistema |
 | `docs/delivery/08-security-compliance.md` | Cambio en políticas de seguridad, nuevo compliance |
+| `GitHub Issues/PRs/Milestones` | Nueva feature, bug, cambio de fase, deploy |
 
 ### Campos que SIEMPRE deben estar sincronizados en project-context.md
 
@@ -218,13 +219,14 @@ CAMBIO DE REQUERIMIENTO → sincronizar:
 El agente detecta automáticamente cuando algo está desincronizado y lo señala:
 
 ```
-⚠️ DESINCRONIZACIÓN DETECTADA
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️ DESINCRONIZACIÓN DETECTADA (incluyendo GitHub)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Problema: [qué está desincronizado]
 Detectado porque: [evidencia]
 
 Lo que dice el contexto: [valor en project-context.md]
 Lo que es la realidad: [valor real]
+GitHub Issues: [estado actual en GitHub vs lo que debería ser]
 
 Para sincronizar:
 1. [paso concreto]
@@ -243,6 +245,11 @@ Para sincronizar:
 - El stack tecnológico en el contexto no coincide con el código que se comparte
 - Hay deuda técnica mencionada en conversación que no está registrada
 - El bucle de calidad figura como cerrado pero hay ítems sin resolver
+- Hay un issue de GitHub cerrado pero la feature no está completada en el proyecto
+- Hay un PR mergeado pero no está registrado en las Release Notes
+- El milestone activo de GitHub no coincide con la fase actual del proyecto
+- Hay cambios en el código sin issue vinculado en GitHub
+- Hay un release en GitHub que no corresponde al estado actual del proyecto
 - Los documentos de entrega no reflejan cambios recientes en el proyecto
 - Hay una nueva feature completada pero el Manual de Usuario no la menciona
 - Hay un nuevo endpoint pero la API Reference no lo incluye

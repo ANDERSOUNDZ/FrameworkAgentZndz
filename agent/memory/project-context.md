@@ -15,6 +15,11 @@ Fase actual:            [0-7] — [nombre de la fase — ej: 2 — Diseño y Arq
 Subfase:                [descripción concreta — ej: Definiendo modelo de datos]
 Bucle de calidad:       [ABIERTO / CERRADO]
 Próxima acción:         [acción específica — ej: Presentar ADR #1 al equipo]
+GitHub:
+  Repo:                 [URL del repositorio — ej: https://github.com/usuario/proyecto]
+  Issues abiertos:      [N]
+  PRs abiertos:         [N]
+  Última release:       [vX.X.X]
 ```
 
 ---
