@@ -17,7 +17,7 @@ Sin este archivo el framework no funciona. Es el **corazón del sistema**.
 
 ### Paso 1 — Abre el archivo maestro
 
-Ve a `agent/core/agent.md` y **copia todo su contenido** (749 líneas).
+Ve a `agent/core/agent.md` y **copia todo su contenido** (839 líneas).
 
 ### Paso 2 — Pégalo como system prompt
 
@@ -71,7 +71,8 @@ Cada paso tiene un **control de calidad**: no puedes avanzar al siguiente si el 
 │   ├── core/
 │   │   └── agent.md                    # ⭐ ARCHIVO MAESTRO (system prompt)
 │   ├── memory/
-│   │   └── project-context.md          # Plantilla de contexto del proyecto
+│   │   ├── project-context.md          # Plantilla de contexto del proyecto
+│   │   └── config.md               # Configuración del framework (para el agente)
 │   ├── loops/
 │   │   ├── quality-loop.md             # Bucle de calidad universal
 │   │   ├── change-loop.md              # Bucle para cambios y refactorizaciones
