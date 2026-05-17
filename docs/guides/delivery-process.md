@@ -63,22 +63,34 @@ Cada vez que el proyecto cambia (nueva feature, bug fix, refactor, cambio de con
 
 ---
 
-## Estructura del paquete de entrega
+## Documentación de avance y sprints (interna)
+
+Además del paquete de entrega para el cliente, el agente genera documentación de **avance del proyecto** durante el desarrollo:
 
 ```
 proyecto/
-└── docs/
-    └── delivery/
-        ├── README.md                              ← Índice del paquete
-        ├── 01-technical-architecture.md           ← Arquitectura Técnica
-        ├── 02-user-manual.md                      ← Manual de Usuario
-        ├── 03-api-reference.md                    ← API Reference
-        ├── 04-deployment-guide.md                 ← Guía de Despliegue
-        ├── 05-operations-guide.md                 ← Guía de Operaciones
-        ├── 06-release-notes.md                    ← Release Notes
-        ├── 07-admin-guide.md                      ← Guía de Administración
-        └── 08-security-compliance.md              ← Seguridad y Compliance
+├── docs/
+│   ├── delivery/                    ← Paquete para el cliente (Fase 7)
+│   │   └── ...
+│   ├── sprints/                     ← Documentación de sprints
+│   │   ├── sprint-plan-1.md         ← Planificación del Sprint 1
+│   │   ├── sprint-backlog-1.md      ← Backlog y daily tracking
+│   │   └── sprint-review-1.md       ← Review + Retrospectiva
+│   └── progress/                    ← Reportes de avance
+│       ├── status-report-2026-05-17.md   ← Reporte semanal
+│       ├── session-report-2026-05-17.md  ← Reporte por sesión
+│       └── milestone-report-mvp.md       ← Reporte de hito
 ```
+
+### ¿Qué va en el paquete de entrega y qué es interno?
+
+| Documento | ¿Para el cliente? | Propósito |
+|-----------|:----------------:|-----------|
+| `delivery/*` | ✅ Sí | Documentación técnica y de usuario final |
+| `sprints/*` | ❌ No (opcional) | Seguimiento interno del equipo |
+| `progress/*` | ❌ No (opcional) | Reportes de estado para stakeholders |
+
+El paquete `delivery/` es lo que se entrega al cliente. Los sprints y progress son documentación de trabajo interno que puede compartirse opcionalmente.
 
 ---
 
@@ -176,8 +188,8 @@ SINCRONIZACIÓN DE DOCUMENTACIÓN AL CIERRE DE SESIÓN
 | Tipo de cliente | Documentos recomendados |
 |----------------|------------------------|
 | Técnico (equipo interno del cliente) | Arquitectura, API Reference, Guía de Despliegue, Guía de Operaciones |
-| No técnico (usuarios de negocio) | Manual de Usuario, Release Notes |
-| Administrativo | Guía de Administración, Seguridad y Compliance |
-| Completo (todos los stakeholders) | Todos los documentos del paquete |
+| No técnico (usuarios de negocio) | Manual de Usuario, Release Notes, Status Reports |
+| Administrativo | Guía de Administración, Seguridad y Compliance, Milestone Reports |
+| Completo (todos los stakeholders) | Todos los documentos del paquete + Status Reports |
 
 El agente puede adaptar el paquete según las necesidades específicas del cliente en la Fase 7.

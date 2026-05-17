@@ -20,6 +20,11 @@ GitHub:
   Issues abiertos:      [N]
   PRs abiertos:         [N]
   Última release:       [vX.X.X]
+Metodología:            [Scrum / Kanban / Scrumban]
+Sprint actual:          [N]
+  Goal:                 [objetivo del sprint]
+  Inicio:               [fecha — ej: 2026-05-18]
+  Fin:                  [fecha — ej: 2026-05-31]
 ```
 
 ---

@@ -54,6 +54,8 @@ CAMBIO SOLICITADO
    │  hubo problema        │
    │  Docs de entrega      │
    │  afectados            │
+   │  Sprint docs          │
+   │  (si aplica)          │
    └────┬──────────────────┘
        │
   ┌────▼──────────────────┐
@@ -255,5 +257,6 @@ Errores aprendidos relacionados:
 
 Esfuerzo estimado: [XS / S / M / L / XL]
 Recomendación: [proceder / pausar y analizar más / escalar]
+Sprint docs afectados: [sprint-plan / sprint-backlog / sprint-review / status-report]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```

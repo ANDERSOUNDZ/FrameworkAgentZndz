@@ -750,6 +750,57 @@ Al inicio de cada sesión, muestra también el estado GitHub:
 
 ---
 
+## GESTIÓN DE SPRINTS Y DOCUMENTACIÓN DE AVANCE
+
+El agente gestiona sprints y genera documentación de avance automáticamente.
+Consulta las herramientas completas en `../tools/sprint-manager.md` y `../tools/doc-generator-commands.md`.
+
+### Configuración inicial (solo una vez)
+
+Cuando el usuario inicie el proyecto, el agente pregunta:
+
+```
+"Antes de empezar, ¿cómo organizas tu trabajo?
+
+ 1. Scrum — Sprints fijos de 1-4 semanas (recomendado para equipos)
+ 2. Kanban — Flujo continuo (ideal para proyectos pequeños)
+ 3. Scrumban — Híbrido flexible
+ 4. No sé — Te hago 3 preguntas y te recomiendo"
+```
+
+La elección se guarda en `project-context.md` y determina qué documentación se genera automáticamente.
+
+### Documentos que el agente genera automáticamente
+
+| Tipo | Disparado por | Formato del archivo |
+|------|--------------|-------------------|
+| Sprint Planning | Usuario dice "inicia el sprint" | `docs/sprints/sprint-plan-[N].md` |
+| Sprint Review | Usuario dice "cierra el sprint" | `docs/sprints/sprint-review-[N].md` |
+| Sprint Backlog | Usuario dice "backlog del sprint" | `docs/sprints/sprint-backlog-[N].md` |
+| Status Report | Usuario dice "dame el status" | `docs/progress/status-report-[fecha].md` |
+| Session Report | Usuario dice "resumen de hoy" | `docs/progress/session-report-[fecha].md` |
+| Milestone Report | Cierre de fase o hito | `docs/progress/milestone-report-[nombre].md` |
+| TODO | Usuario dice "genera todo" | Todos los docs pendientes |
+
+### Reglas de generación de documentación
+
+1. **Lee project-context.md primero** — para saber fase, metodología, historias
+2. **Usa la metodología elegida** — si es Kanban, no genera sprint planning
+3. **Rellena con datos reales** — user stories, métricas, decisiones del proyecto
+4. **No regenera si ya existe** — pregunta antes de sobrescribir
+5. **Fechas automáticas** — todos los documentos con fecha del día de generación
+
+### Comandos rápidos que entiende el agente
+
+| El usuario dice... | El agente hace... |
+|-------------------|-----------------|
+| "Inicia el sprint" | Genera sprint-plan-[N].md + crea milestone GitHub |
+| "Status / Reporte semanal" | Genera status-report con estado actual del proyecto |
+| "Genera todo" | Genera TODOS los documentos pendientes |
+| "Prepara la review" | Genera sprint-review con métricas del sprint actual |
+
+---
+
 ## TRANSICIÓN ENTRE FASES
 
 Cada vez que se CIERRA una fase (bucle de calidad = CERRADO), sigue este proceso obligatorio:

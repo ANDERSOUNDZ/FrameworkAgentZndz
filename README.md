@@ -79,7 +79,10 @@ Cada paso tiene un **control de calidad**: no puedes avanzar al siguiente si el 
 │   ├── phases/
 │   │   └── phase-7-delivery.md         # Fase 7: Documentación de entrega
 │   ├── tools/
-│   │   └── doc-generator.md            # Generador de documentación de entrega
+│   │   ├── doc-generator.md            # Generador de documentación de entrega
+│   │   ├── github-manager.md           # Gestor de GitHub (issues, PRs, releases)
+│   │   ├── sprint-manager.md           # Gestor de sprints y planificación
+│   │   └── doc-generator-commands.md   # Comandos rápidos de generación
 │   └── validators/
 │       ├── documentation-validator.md  # Validador de documentación
 │       └── code-validator.md           # Validador de código
@@ -90,9 +93,18 @@ Cada paso tiene un **control de calidad**: no puedes avanzar al siguiente si el 
 ├── docs/
 │   ├── guides/
 │   │   ├── how-to-use.md               # Guía de uso del framework
-│   │   └── delivery-process.md         # Proceso de entrega de documentación
+│   │   ├── delivery-process.md         # Proceso de entrega de documentación
+│   │   └── sprint-methodology-guide.md # Guía para elegir metodología de trabajo
 │   ├── templates/
 │   │   ├── adr-template.md             # Plantilla de ADR
+│   │   ├── sprint/                     # Plantillas de sprints
+│   │   │   ├── sprint-plan-template.md
+│   │   │   ├── sprint-review-template.md
+│   │   │   └── sprint-backlog-template.md
+│   │   ├── progress/                   # Plantillas de avance
+│   │   │   ├── status-report-template.md
+│   │   │   ├── session-report-template.md
+│   │   │   └── milestone-report-template.md
 │   │   └── delivery/                   # Plantillas de documentos de entrega
 │   │       ├── technical-architecture-template.md
 │   │       ├── user-manual-template.md
