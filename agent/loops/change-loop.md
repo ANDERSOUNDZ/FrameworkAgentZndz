@@ -145,6 +145,63 @@ Antes de implementar:
     - [ ] Release Notes
     - [ ] Otros docs afectados
 
+### Merge de feature / Pull Request
+**Definición:** Integrar código nuevo a la rama principal.
+**Riesgo principal:** Conflictos de integración o regresiones no detectadas.
+
+Antes del merge:
+- [ ] Code review aprobado (mínimo 1 revisor)
+- [ ] Todas las pruebas unitarias pasan
+- [ ] Pruebas de integración pasan (si existen)
+- [ ] No hay conflictos con la rama base
+- [ ] La feature completa su user story correspondiente
+
+Durante:
+- Usar squash merge o merge convencional según convención del equipo
+- Ejecutar suite completa de pruebas post-merge
+
+Después:
+- [ ] La rama feature se eliminó (si aplica)
+- [ ] Release Notes actualizadas con la nueva feature
+- [ ] Docs de entrega afectados actualizados (Manual de Usuario, API Reference)
+
+### Actualización de dependencias
+**Definición:** Actualizar librerías, paquetes o herramientas del proyecto.
+**Riesgo principal:** Breaking changes no detectados en dependencias actualizadas.
+
+Antes de actualizar:
+- [ ] ¿Hay un changelog de la dependencia que indique breaking changes?
+- [ ] ¿La versión actual está soportada o tiene vulnerabilidades conocidas?
+- [ ] ¿Existen pruebas que cubran el código que usa esta dependencia?
+
+Durante:
+- Actualizar una dependencia a la vez (no varias en el mismo commit)
+- Ejecutar pruebas después de cada actualización
+
+Después:
+- [ ] Las pruebas existentes siguen pasando
+- [ ] No hay funcionalidades rotas por el cambio de versión
+- [ ] Se documentó en Release Notes si hubo cambio mayor
+- [ ] docs/delivery/04-deployment-guide.md actualizado si cambian requisitos de infraestructura
+
+### Cambio en documentación de entrega
+**Definición:** Modificar, corregir o completar documentos de entrega del proyecto.
+**Riesgo principal:** Información desactualizada o inconsistente entre documentos.
+
+Antes del cambio:
+- [ ] ¿Qué documentos específicos se modifican?
+- [ ] ¿La fuente de la nueva información está verificada (código, configuración, ADR)?
+- [ ] ¿Hay otros documentos que referencien la misma información y deban actualizarse también?
+
+Durante:
+- Mantener el mismo formato y tono del documento existente
+- Actualizar la fecha de última modificación
+
+Después:
+- [ ] El documento modificado pasó el validador de documentación (documentation-validator.md)
+- [ ] Todos los documentos que referencian la misma información están consistentes
+- [ ] project-context.md refleja el nuevo estado del documento
+
 ---
 
 ## EVALUACIÓN DE IMPACTO

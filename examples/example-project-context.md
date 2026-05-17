@@ -148,6 +148,43 @@ Estado: En progreso
 
 ---
 
+## PATRONES DESCUBIERTOS
+
+### Patrón #1
+```
+Contexto: Validación de features con usuarios antes de incluirlas en el MVP
+Patrón: Entrevista rápida con 3 usuarios target antes de comprometer una feature
+Beneficio: Evita construir funcionalidades que nadie usará
+Aplicación: Antes de agregar cualquier feature al backlog, validar con al menos 3 usuarios
+```
+
+---
+
+## DEUDA TÉCNICA
+
+| # | Descripción | Tipo | Impacto | Esfuerzo | Prioridad | Estado |
+|---|-------------|------|---------|----------|-----------|--------|
+| 1 | No hay pruebas automatizadas en frontend | Pruebas | Medio | 2 días | Media | Pendiente |
+
+---
+
+## DOCUMENTACIÓN DE ENTREGA
+
+### Estado de documentos
+
+| Documento | Estado | Última actualización | Validado |
+|-----------|--------|---------------------|----------|
+| Arquitectura Técnica | Borrador | 2026-05-10 | No |
+| Manual de Usuario | Borrador | 2026-05-08 | No |
+| API Reference | No iniciado | - | - |
+| Guía de Despliegue | No iniciado | - | - |
+| Guía de Operaciones | No iniciado | - | - |
+| Release Notes | No iniciado | - | - |
+| Guía de Administración | No iniciado | - | - |
+| Seguridad y Compliance | No iniciado | - | - |
+
+---
+
 ## MÉTRICAS DE CALIDAD
 
 | Métrica | Objetivo | Actual | Estado |
@@ -157,6 +194,8 @@ Estado: En progreso
 | ADRs documentados | ≥ 1 por decisión | 2 | 🟢 OK |
 | Deuda técnica | Baja | Baja | 🟢 OK |
 | User stories completadas | 5/12 | 2/5 MVP | 🟡 En progreso |
+| Documentos de entrega completos | 8 | 0 | 🔴 Pendiente |
+| Docs sincronizados | 8 | 0 | 🔴 Pendiente |
 
 ---
 

@@ -17,7 +17,7 @@ Sin este archivo el framework no funciona. Es el **corazón del sistema**.
 
 ### Paso 1 — Abre el archivo maestro
 
-Ve a `agent/core/agent.md` y **copia todo su contenido** (707 líneas).
+Ve a `agent/core/agent.md` y **copia todo su contenido** (749 líneas).
 
 ### Paso 2 — Pégalo como system prompt
 

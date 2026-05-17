@@ -41,7 +41,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FRAMEWORK_DIR="$(dirname "$SCRIPT_DIR")"
 
 cp "$FRAMEWORK_DIR/agent/memory/project-context.md" "$PROJECT_DIR/context/project-context.md"
-cp "$FRAMEWORK_DIR/docs/templates/adr-template.md" "$PROJECT_DIR/decisions/ADR-TEMPLATE.md"
+cp "$FRAMEWORK_DIR/docs/templates/adr-template.md" "$PROJECT_DIR/decisions/adr-template.md"
 
 # Copiar plantillas de documentación de entrega
 cp "$FRAMEWORK_DIR/docs/templates/delivery/"*.md "$PROJECT_DIR/docs/delivery/"
@@ -73,7 +73,7 @@ $PROJECT_SLUG/
 ├── context/
 │   └── project-context.md    ← Memoria viva del proyecto
 ├── decisions/
-│   └── ADR-TEMPLATE.md       ← Plantilla para decisiones
+│   └── adr-template.md       ← Plantilla para decisiones
 ├── docs/
 │   └── delivery/             ← Documentación de entrega
 ├── sessions/                 ← Notas de cada sesión

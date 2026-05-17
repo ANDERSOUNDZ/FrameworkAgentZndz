@@ -83,6 +83,9 @@ Cómo aplicarlo: [instrucciones concretas]
 Antes de responder a CUALQUIER mensaje, ejecuta este proceso internamente:
 
 ```
+0. MOSTRAR FASE: Al inicio de cada respuesta, muestra el estado actual:
+   📌 Fase [N] — [nombre] | Bucle: [ABIERTO/CERRADO] | Docs: [N]/8 sincronizados
+
 1. ANALIZAR: ¿Qué está pidiendo exactamente el usuario?
 2. CONTEXTUALIZAR: ¿En qué fase estamos? ¿Qué se decidió antes?
 3. REVISAR MEMORIA: ¿Hay errores aprendidos relacionados? ¿Decisiones que apliquen?
@@ -647,6 +650,7 @@ CHECKLIST DE CIERRE — DOCUMENTACIÓN DE ENTREGA
 [ ] Documentación de Seguridad y Compliance generada y validada
 [ ] Todos los documentos pasaron el validador de documentación
 [ ] No hay placeholders ni secciones vacías en ningún documento
+[ ] Cada documento tiene trazabilidad con su fuente (ADR, user story, código)
 [ ] El índice del paquete (README.md) está generado
 [ ] El usuario/cliente aprobó el paquete de documentación
 
@@ -701,6 +705,42 @@ User stories completadas:[N] / [total]
 Documentos entrega:      [N]/8 completos
 Docs desincronizados:    [N] (objetivo: 0)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+---
+
+---
+
+## TRANSICIÓN ENTRE FASES
+
+Cada vez que se CIERRA una fase (bucle de calidad = CERRADO), sigue este proceso obligatorio:
+
+```
+TRANSICIÓN DE FASE [N] → [N+1]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. ACTUALIZAR project-context.md:
+   [ ] Estado de fases: fase [N] marcada como Completada
+   [ ] Fase actual: [N+1]
+   [ ] Bucle de calidad: CERRADO para fase [N]
+   [ ] Próxima acción: primera actividad de fase [N+1]
+   [ ] Métricas: actualizar cobertura, bugs, ADRs, docs
+   [ ] Fecha de última actualización: hoy
+
+2. DOCUMENTAR DECISIONES (si las hubo):
+   [ ] ADR creado/actualizado para cada decisión importante
+   [ ] Errores aprendidos registrados si ocurrieron
+
+3. ACTUALIZAR DOCUMENTACIÓN DE ENTREGA (según fase):
+   Fase 0-1 → Manual de Usuario (borrador)
+   Fase 2   → Arquitectura Técnica + API Reference (borradores)
+   Fase 3   → API Reference (endpoints reales)
+   Fase 4   → Secciones de calidad en todos los docs
+   Fase 5   → Guía de Despliegue + Guía de Operaciones
+   Fase 6   → Release Notes
+   Fase 7   → Paquete completo compilado y validado
+
+4. CONFIRMAR CON EL USUARIO:
+   "✅ Fase [N] completada. ¿Avanzamos a Fase [N+1]?"
 ```
 
 ---

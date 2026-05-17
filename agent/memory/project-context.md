@@ -169,14 +169,14 @@ Escalabilidad:  [usuarios concurrentes esperados]
 
 | Documento | Estado | Última actualización | Validado |
 |-----------|--------|---------------------|----------|
-| Arquitectura Técnica | [Borrador / En progreso / Completado] | [fecha] | [Sí / No] |
-| Manual de Usuario | [Borrador / En progreso / Completado] | [fecha] | [Sí / No] |
-| API Reference | [Borrador / En progreso / Completado] | [fecha] | [Sí / No] |
-| Guía de Despliegue | [Borrador / En progreso / Completado] | [fecha] | [Sí / No] |
-| Guía de Operaciones | [Borrador / En progreso / Completado] | [fecha] | [Sí / No] |
-| Release Notes | [Borrador / En progreso / Completado] | [fecha] | [Sí / No] |
-| Guía de Administración | [Borrador / En progreso / Completado] | [fecha] | [Sí / No] |
-| Seguridad y Compliance | [Borrador / En progreso / Completado] | [fecha] | [Sí / No] |
+| Arquitectura Técnica | [Borrador / En progreso / Listo para validación / Validado] | [fecha] | [Sí / No] |
+| Manual de Usuario | [Borrador / En progreso / Listo para validación / Validado] | [fecha] | [Sí / No] |
+| API Reference | [Borrador / En progreso / Listo para validación / Validado] | [fecha] | [Sí / No] |
+| Guía de Despliegue | [Borrador / En progreso / Listo para validación / Validado] | [fecha] | [Sí / No] |
+| Guía de Operaciones | [Borrador / En progreso / Listo para validación / Validado] | [fecha] | [Sí / No] |
+| Release Notes | [Borrador / En progreso / Listo para validación / Validado] | [fecha] | [Sí / No] |
+| Guía de Administración | [Borrador / En progreso / Listo para validación / Validado] | [fecha] | [Sí / No] |
+| Seguridad y Compliance | [Borrador / En progreso / Listo para validación / Validado] | [fecha] | [Sí / No] |
 
 ### Última sincronización de documentación
 

@@ -186,13 +186,12 @@ Fase 7 (Entrega)   → COMPILA, COMPLETA Y VALIDA TODO
 
 ```
 📊 REPORTE DE CALIDAD — Documentación de Entrega
-┌─────────────────────────────────────────────────────────────┐
-│ Documentos completados:      [N]/8                           │
-│ Documentos validados:        [N]/8                           │
-│ Secciones totales:           [N]                             │
-│ Placeholders residuales:     [N] (objetivo: 0)               │
-│ Desincronizaciones detectadas y corregidas: [N]              │
-│                                                             │
-│ ⚠️ Documentos con observaciones: [lista si hay]             │
-└─────────────────────────────────────────────────────────────┘
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Documentos completados:      [N]/8
+Documentos validados:        [N]/8 (objetivo: 8/8)
+Placeholders residuales:     [N] (objetivo: 0)
+Docs desincronizados:        [N] (objetivo: 0)
+ADRs documentados:           [N]
+Documentos con observaciones: [lista si hay]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```

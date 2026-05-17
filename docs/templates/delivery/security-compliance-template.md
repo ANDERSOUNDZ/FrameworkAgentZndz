@@ -192,6 +192,5 @@ El sistema permite:
 
 ## 8. Referencias
 
-- [Política de privacidad → `docs/privacy-policy.md`]
-- [Términos de servicio → `docs/terms-of-service.md`]
 - [Guía de Administración → `admin-guide.md`]
+- [Guía de Operaciones → `operations-guide.md`]

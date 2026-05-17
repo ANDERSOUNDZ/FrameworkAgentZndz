@@ -68,16 +68,18 @@ Al inicio de cada sesión nueva, comparte el contexto con el agente:
 
 Crea una carpeta por proyecto:
 ```
-proyectos/
+projects/
 ├── proyecto-alpha/
-│   ├── context.md          ← Copia de project-context.md completada
-│   └── decisions/          ← ADRs de este proyecto
+│   ├── context/
+│   │   └── project-context.md   ← Copia de la plantilla completada
+│   └── decisions/               ← ADRs de este proyecto
 ├── proyecto-beta/
-│   ├── context.md
+│   ├── context/
+│   │   └── project-context.md
 │   └── decisions/
 ```
 
-Al iniciar sesión en un proyecto, comparte el `context.md` correspondiente.
+Al iniciar sesión en un proyecto, comparte el `context/project-context.md` correspondiente.
 
 ---
 
