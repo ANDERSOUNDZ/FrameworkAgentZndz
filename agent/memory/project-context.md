@@ -11,20 +11,23 @@
 ```
 Fecha de inicio:        [fecha — ej: 2026-05-01]
 Última actualización:   [fecha — ej: 2026-05-15]
-Fase actual:            [0-7] — [nombre de la fase — ej: 2 — Diseño y Arquitectura]
-Subfase:                [descripción concreta — ej: Definiendo modelo de datos]
+Fase actual:            [0-7] — [nombre de la fase]
+Subfase actual:         [N.M] — [nombre de la subfase]
+Estado de subfase:      [PLANIFICADA / EN PROGRESO / EN REVISIÓN / BLOQUEADA / REPLANIFICADA / CERRADA]
 Bucle de calidad:       [ABIERTO / CERRADO]
-Próxima acción:         [acción específica — ej: Presentar ADR #1 al equipo]
+Próxima acción:         [acción específica y concreta]
+Fallos activos:         [Ninguno / descripción del fallo en curso]
+Modo de ejecución:      [AUTÓNOMO / SUPERVISADO / PERSONALIZADO — descripción]
 GitHub:
-  Repo:                 [URL del repositorio — ej: https://github.com/usuario/proyecto]
+  Repo:                 [URL del repositorio]
   Issues abiertos:      [N]
   PRs abiertos:         [N]
   Última release:       [vX.X.X]
 Metodología:            [Scrum / Kanban / Scrumban]
 Sprint actual:          [N]
   Goal:                 [objetivo del sprint]
-  Inicio:               [fecha — ej: 2026-05-18]
-  Fin:                  [fecha — ej: 2026-05-31]
+  Inicio:               [fecha]
+  Fin:                  [fecha]
 ```
 
 ---
@@ -86,6 +89,59 @@ Revisable cuando: [condición]
 
 ---
 
+## REGISTRO DE SUBFASES
+
+> El agente actualiza esta sección automáticamente. No editar manualmente.
+
+### Fase actual — Desglose de subfases
+
+| Subfase | Nombre | Estado | Inicio | Cierre | Fallos | Lecciones |
+|---------|--------|--------|--------|--------|--------|-----------|
+| [N.1] | [nombre] | [estado] | [fecha] | [fecha] | [N] | [N] |
+| [N.2] | [nombre] | [estado] | [fecha] | [fecha] | [N] | [N] |
+
+### Detalle de subfase en curso
+
+```
+Subfase:    [N.M] — [nombre]
+Estado:     [EN PROGRESO / BLOQUEADA / EN REVISIÓN]
+Objetivo:   [qué debe producirse]
+
+Tareas:
+  [✅] Tarea 1 — [resultado] — [artefactos]
+  [🔄] Tarea 2 — EN PROGRESO
+  [⬜] Tarea 3 — pendiente
+
+Fallos en esta subfase:
+  [Ninguno / ver REGISTRO DE FALLOS]
+
+Artefactos generados:
+  - [archivo/componente] — [descripción]
+```
+
+---
+
+## REGISTRO DE FALLOS
+
+> El agente registra aquí cada fallo automáticamente, incluyendo los resueltos.
+
+### Fallo #1
+```
+Fecha:              [fecha]
+Subfase:            [N.M] — [nombre]
+Tipo:               [técnico / requerimiento / coherencia / regresión / dependencia]
+Descripción:        [qué pasó]
+Causa raíz:         [por qué ocurrió]
+Intentos autónomos: [N]
+Resolución:         [autónoma / escalada al usuario]
+Solución:           [qué se hizo]
+Lección:            [qué hacer diferente]
+Impacto en plan:    [replanificado / ajuste de alcance / sin impacto]
+Estado:             [RESUELTO / ACTIVO]
+```
+
+---
+
 ## ERRORES APRENDIDOS
 
 ### Error #1
@@ -95,7 +151,8 @@ Fase: [en qué fase ocurrió]
 Error: [qué salió mal]
 Causa raíz: [por qué ocurrió]
 Solución aplicada: [cómo se resolvió]
-Prevención futura: [qué hacer diferente]
+Prevención futura: [qué hacer diferente — concreto y accionable]
+Verificación: [cómo sabremos que no se repite]
 ```
 
 ---

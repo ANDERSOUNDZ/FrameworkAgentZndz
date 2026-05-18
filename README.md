@@ -1,188 +1,135 @@
 # SDLC Agent Framework
 
 > Framework de desarrollo de software guiado por agente IA.
-> Agnóstico de LLM. Aprende, revisa, piensa y mejora en cada iteración.
+> Versión 4.0 — Pipeline secuencial inmutable por prompt. Sin saltos. Sin atajos.
+> Agnóstico de LLM. Funciona con cualquier modelo via CLI, API o interfaz.
 
 ---
 
-## ⭐ Archivo Maestro
+## ⭐ Archivos Maestros
 
-**`agent/core/agent.md`** — Copia **todo el contenido** de este archivo como system prompt en cualquier LLM (Claude, ChatGPT, Gemini, etc.).
+**`agent/core/agent.md`** — El sistema completo. Copia todo su contenido como system prompt.
 
-Sin este archivo el framework no funciona. Es el **corazón del sistema**.
+**`agent/core/prompt-pipeline.md`** — El recordatorio del pipeline. Incluirlo en cada llamada refuerza que el agente ejecute los 8 pasos en cada prompt.
 
 ---
 
-## 🚀 Inicio rápido (3 pasos)
+## 🧠 Principio fundamental v4.0
 
-### Paso 1 — Abre el archivo maestro
+**Cada prompt = 8 pasos en orden. Sin excepción.**
 
-Ve a `agent/core/agent.md` y **copia todo su contenido** (839 líneas).
+El agente no puede responder "agrega este botón" y simplemente agregar el botón. Primero declara el estado del proyecto, clasifica el prompt, verifica precondiciones, revisa memoria, ejecuta el sub-pipeline correspondiente, corre el bucle de calidad, registra todo, y valida que no saltó nada. Solo entonces la respuesta está completa.
+
+Aplica a TODOS los prompts: simples, complejos, técnicos, de consulta, de deploy. No existe prompt que no pase por el pipeline.
+
+---
+
+## 🆕 Novedades en v4.0
+
+| Mejora | Descripción |
+|--------|-------------|
+| **Pipeline de 8 pasos por prompt** | Cada prompt dispara el pipeline completo en orden — ningún paso es saltable |
+| **Clasificación obligatoria del prompt** | 7 tipos (A-G), cada uno con su sub-pipeline específico |
+| **Precondiciones verificables** | Antes de ejecutar, el agente verifica explícitamente que las condiciones están dadas |
+| **`prompt-pipeline.md`** | Archivo incluible en cada llamada de API/CLI para forzar el pipeline |
+| **Autovalidación final** | El agente verifica que no saltó pasos antes de enviar su respuesta |
+| **Señales de alerta documentadas** | Cómo detectar cuando el agente está saltándose pasos |
+
+*(v3.0 incluyó: Ley de Inmutabilidad, failure-recovery.md, subfase-tracker.md, registro granular automático)*
+
+---
+
+## 🚀 Inicio rápido
+
+### Paso 1 — Copia el sistema
+Ve a `agent/core/agent.md` y copia todo su contenido.
 
 ### Paso 2 — Pégalo como system prompt
 
 | Plataforma | Dónde pegarlo |
-|------------|--------------|
+|------------|----|
 | **Claude** (claude.ai) | Projects → Project Instructions |
 | **ChatGPT** | Custom Instructions o GPT System Prompt |
 | **Gemini** | Gems → Instrucciones del Gem |
-| **Mastra / LangChain** | System message de tu agente |
+| **API / CLI** | System message — ver ejemplo abajo |
 
-### Paso 3 — Inicia el proyecto
+### Paso 3 — Incluye el pipeline en cada llamada (para API/CLI)
 
-Solo di **"hola"** o describe tu proyecto. El agente comenzará automáticamente la **entrevista inicial (Fase 0)** y te guiará paso a paso hasta la entrega final.
+```python
+system_prompt = open("agent/core/agent.md").read()
+pipeline      = open("agent/core/prompt-pipeline.md").read()
+project_state = open("mi-proyecto/context/project-context.md").read()
+
+messages = [
+    {"role": "system", "content": system_prompt + "\n\n---\n\n" + pipeline},
+    {"role": "user",   "content": project_state + "\n\n" + user_prompt}
+]
+```
+
+### Paso 4 — Inicia con el contexto
+
+Di: *"Aquí está el contexto de mi proyecto: [pega project-context.md]"*
+
+El agente ejecutará el pipeline desde el PASO 0 automáticamente.
 
 ---
-
-## ¿Qué es esto? (para cualquier persona)
-
-Imagina que contratas a un **arquitecto de software senior con 20 años de experiencia** que se sienta a tu lado y te guía en cada paso, desde la idea hasta el producto final. Eso es SDLC Agent Framework.
-
-No es código que se ejecuta solo. Es un **sistema de instrucciones** que le das a una IA (como ChatGPT o Claude) para que se comporte como ese arquitecto. La IA deja de ser un chatbot genérico y se convierte en un **director de proyecto, arquitecto, validador de calidad y documentador** todo en uno.
-
-### ¿Qué hace exactamente?
-
-| Paso | Qué hace el agente |
-|------|-------------------|
-| 1 | Te **entrevista** para entender tu problema antes de escribir código |
-| 2 | Te ayuda a definir **qué construir** (requisitos) |
-| 3 | Diseña la **arquitectura** del sistema |
-| 4 | Escribe **código de calidad** contigo |
-| 5 | **Prueba** que todo funcione correctamente |
-| 6 | Te ayuda a **desplegar** el sistema |
-| 7 | Genera la **documentación** para entregar al cliente |
-
-Cada paso tiene un **control de calidad**: no puedes avanzar al siguiente si el anterior no está bien hecho.
 
 ## Estructura del proyecto
 
 ```
 /
-├── README.md                           # Este archivo
-│
-├── .github/                            # Integración con GitHub
-│   ├── ISSUE_TEMPLATE/
-│   │   ├── feature.md                  # Template para issues de features
-│   │   ├── bug.md                      # Template para issues de bugs
-│   │   └── task.md                     # Template para issues de tareas técnicas
-│   └── PULL_REQUEST_TEMPLATE.md        # Template para pull requests
-│
-├── agent/                              # Núcleo del agente
+├── agent/
 │   ├── core/
-│   │   └── agent.md                    # ⭐ ARCHIVO MAESTRO (system prompt)
-│   ├── memory/
-│   │   ├── project-context.md          # Plantilla de contexto del proyecto
-│   │   └── config.md               # Configuración del framework (para el agente)
+│   │   ├── agent.md              ⭐ System prompt maestro (v4.0)
+│   │   └── prompt-pipeline.md    ⭐ Pipeline de 8 pasos por prompt (v4.0)
 │   ├── loops/
-│   │   ├── quality-loop.md             # Bucle de calidad universal
-│   │   ├── change-loop.md              # Bucle para cambios y refactorizaciones
-│   │   └── sync-loop.md                # Bucle de sincronización total
+│   │   ├── quality-loop.md       Bucle de calidad universal
+│   │   ├── change-loop.md        Bucle para cambios
+│   │   ├── sync-loop.md          Protocolo de sincronización total
+│   │   ├── failure-recovery.md   Recuperación autónoma ante fallos (v3)
+│   │   └── subfase-tracker.md    Registro granular de subfases (v3)
+│   ├── memory/
+│   │   ├── project-context.md    Archivo vivo del proyecto
+│   │   └── config.md             Configuración del framework
 │   ├── phases/
-│   │   └── phase-7-delivery.md         # Fase 7: Documentación de entrega
+│   │   └── phase-7-delivery.md
 │   ├── tools/
-│   │   ├── doc-generator.md            # Generador de documentación de entrega
-│   │   ├── github-manager.md           # Gestor de GitHub (issues, PRs, releases)
-│   │   ├── sprint-manager.md           # Gestor de sprints y planificación
-│   │   └── doc-generator-commands.md   # Comandos rápidos de generación
+│   │   ├── doc-generator.md
+│   │   ├── github-manager.md
+│   │   ├── sprint-manager.md
+│   │   └── doc-generator-commands.md
 │   └── validators/
-│       ├── documentation-validator.md  # Validador de documentación
-│       └── code-validator.md           # Validador de código
-│
+│       ├── code-validator.md
+│       └── documentation-validator.md
 ├── config/
-│   └── framework.yml                   # Configuración global del framework
-│
+│   └── framework.yml
 ├── docs/
 │   ├── guides/
-│   │   ├── how-to-use.md               # Guía de uso del framework
-│   │   ├── delivery-process.md         # Proceso de entrega de documentación
-│   │   └── sprint-methodology-guide.md # Guía para elegir metodología de trabajo
-│   ├── templates/
-│   │   ├── adr-template.md             # Plantilla de ADR
-│   │   ├── sprint/                     # Plantillas de sprints
-│   │   │   ├── sprint-plan-template.md
-│   │   │   ├── sprint-review-template.md
-│   │   │   └── sprint-backlog-template.md
-│   │   ├── progress/                   # Plantillas de avance
-│   │   │   ├── status-report-template.md
-│   │   │   ├── session-report-template.md
-│   │   │   └── milestone-report-template.md
-│   │   └── delivery/                   # Plantillas de documentos de entrega
-│   │       ├── technical-architecture-template.md
-│   │       ├── user-manual-template.md
-│   │       ├── api-reference-template.md
-│   │       ├── deployment-guide-template.md
-│   │       ├── operations-guide-template.md
-│   │       ├── release-notes-template.md
-│   │       ├── admin-guide-template.md
-│   │       └── security-compliance-template.md
-│   └── architecture/
-│
-├── project-template/                    # Plantilla para nuevos proyectos (cópiala a otra carpeta)
-│   ├── context/
-│   │   └── project-context.md
-│   ├── decisions/
-│   │   └── adr-template.md
-│   ├── docs/
-│   │   ├── delivery/
-│   │   ├── sprints/
-│   │   └── progress/
-│   ├── sessions/
-│   └── README.md
-│
+│   └── templates/
+│       ├── sprint/
+│       ├── progress/
+│       └── delivery/
+├── project-template/             Copia esto para cada proyecto nuevo
 ├── examples/
-│   └── example-project-context.md      # Ejemplo de contexto completado
-│
-├── scripts/
-│   └── new-project.sh                  # Script para iniciar nuevo proyecto
-│
-└── tests/
-    ├── unit/
-    └── integration/
+└── scripts/
+    └── new-project.sh
 ```
+
+---
 
 ## Principios del framework
 
-1. **Primero entender, luego construir** — nunca código sin contexto
-2. **Bucle de calidad obligatorio** — cada fase se cierra o no avanza
-3. **Aprendizaje continuo** — el agente aprende de cada error y decisión
-4. **Agnóstico de tecnología** — funciona con cualquier stack
-5. **Agnóstico de LLM** — funciona con cualquier modelo
-6. **Documentación como ciudadano de primera clase** — no es opcional
-7. **Documentación de entrega sincronizada siempre** — cada cambio en el proyecto actualiza automáticamente los documentos que se entregan al cliente
+1. **Pipeline primero** — cada prompt pasa por los 8 pasos, sin excepción
+2. **Primero entender, luego construir** — nunca código sin contexto
+3. **Bucle de calidad obligatorio** — cada fase y subfase se cierra o no avanza
+4. **Registro automático** — el agente registra todo sin que el usuario lo pida
+5. **Recuperación autónoma** — ante fallos, el agente replanifica y actúa (hasta 3 intentos)
+6. **Aprendizaje continuo** — cada error produce una lección con prevención verificable
+7. **Agnóstico de tecnología y LLM** — funciona con cualquier stack y modelo
+8. **Documentación como ciudadano de primera clase** — sincronizada siempre, bloqueante si no
 
-## 📁 Cómo usar (solo copiar y pegar)
-
-Crea **dos carpetas separadas** en tu computadora:
-
-```
-📁 agente/              ← Copia todo el framework aquí (una sola vez)
-📁 mi-proyecto/         ← Copia project-template/ aquí (un proyecto a la vez)
-```
-
-### Paso a paso
-
-```
-1. COPIA toda esta carpeta y pégala en una carpeta llamada "agente"
-
-2. COPIA la carpeta "project-template/" y pégala en otra carpeta
-   llamada "mi-proyecto" (o el nombre de tu proyecto)
-
-3. En "mi-proyecto", completa context/project-context.md
-   con los datos de tu proyecto
-
-4. Abre "agente/agent/core/agent.md", copia todo su contenido (839 líneas)
-   y pégalo como system prompt en ChatGPT o Claude
-
-5. Dile al agente:
-   "Hola, aquí está el contexto de mi proyecto: [pega el contenido
-   de mi-proyecto/context/project-context.md]"
-
-6. El agente comenzará automáticamente la entrevista (Fase 0)
-   y te guiará hasta la entrega final
-```
-
-**El agente y el proyecto NUNCA se mezclan** porque están en carpetas separadas.
+---
 
 ## Cómo contribuir
 
-Para contribuir, revisa la estructura del proyecto y envía un pull request con tus mejoras.
+Revisa la estructura y envía un pull request con tus mejoras.

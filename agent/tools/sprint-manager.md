@@ -124,3 +124,74 @@ Cada vez que el agente:
 - Encuentra un bug → lo registra en el sprint actual
 - Toma una decisión → la incluye en el próximo status report
 - Cierra una fase → genera milestone report automáticamente antes de avanzar
+
+---
+
+## 📊 GANTT — Actualización por evento de sprint
+
+El agente actualiza el Gantt automáticamente en estos momentos del sprint:
+
+| Evento | Acción en el Gantt |
+|--------|-------------------|
+| Sprint Planning | Agrega las tareas del sprint con fechas reales |
+| Feature completada (post-merge) | Marca la tarea como `:done,` |
+| Subfase bloqueada | Marca como `:crit,` y ajusta fechas siguientes |
+| Sprint cerrado | Marca todas las tareas del sprint como `:done,` |
+| Nuevo requerimiento | Agrega tareas nuevas y recalcula el cronograma |
+
+Consulta el generador completo en `../tools/gantt-generator.md`.
+
+---
+
+## 🔀 PR — Proceso por Sprint
+
+Cada historia de usuario completada en el sprint requiere un PR documentado.
+
+**Regla del sprint:** no se puede cerrar un sprint si hay historias completadas sin PR mergeado.
+
+Flujo por historia dentro del sprint:
+```
+Historia seleccionada en Sprint Planning
+          │
+          ▼
+    Desarrollo en branch feat/[nombre]
+          │
+          ▼
+    Documentación de PR generada por el agente
+          │
+          ▼
+    Checklist pre-merge ejecutado
+          │
+          ▼
+    PR creado en GitHub
+          │
+          ▼
+    Code review (auto o por par)
+          │
+          ▼
+    Merge → Historia marcada como COMPLETADA en el sprint
+          │
+          ▼
+    Gantt actualizado (:done,)
+```
+
+Consulta el proceso completo en `../tools/pr-manager.md`.
+
+---
+
+## 📋 Plantilla de Sprint Planning actualizada
+
+Al hacer Sprint Planning, el agente ahora genera:
+
+1. `docs/sprints/sprint-plan-[N].md` — Plan del sprint
+2. Actualización del Gantt — sección del sprint agregada con fechas reales
+3. Milestone en GitHub — creado con las fechas del sprint
+4. Issues en GitHub — uno por historia, asignados al milestone
+
+Al hacer Sprint Review/Cierre, el agente genera:
+
+1. `docs/sprints/sprint-review-[N].md` — Review y retrospectiva
+2. `docs/sprints/sprint-backlog-[N].md` — Estado final del backlog
+3. Actualización del Gantt — tareas marcadas :done, y fechas reales registradas
+4. Milestone cerrado en GitHub
+5. Release Notes actualizado (si hay features completadas)

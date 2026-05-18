@@ -2,19 +2,39 @@
 # Modifica estos valores para ajustar el comportamiento del agente
 
 framework:
-  version: "2.0"
+  version: "6.1"
   language: "es"  # Idioma del agente (es / en)
   agnostic_llm: true  # Compatible con cualquier LLM
 
-# Umbrales de calidad — el agente bloquea el avance si no se cumplen
+# Umbrales de calidad — TODOS bloqueantes, ninguno es guía opcional
 quality:
   test_coverage_minimum: 70        # % mínimo de cobertura de pruebas
   critical_bugs_allowed: 0         # Bugs críticos permitidos antes de deploy
-  max_function_lines: 20           # Líneas máximas por función (guía)
-  max_nesting_depth: 3             # Niveles de anidamiento máximos
-  max_function_params: 4           # Parámetros máximos por función
+  max_function_lines: 20           # Líneas máximas por función — BLOQUEANTE
+  max_nesting_depth: 3             # Niveles de anidamiento máximos — BLOQUEANTE
+  max_function_params: 4           # Parámetros máximos por función — BLOQUEANTE
   ci_build_max_minutes: 10         # Tiempo máximo de build en CI/CD
   uptime_target_percent: 99.5      # Uptime objetivo en producción
+
+  # Reglas de hardcoding — TODAS bloqueantes
+  no_hardcoding:
+    enabled: true
+    block_on_violation: true
+    forbidden:
+      - magic_numbers              # if (status === 3) → usar constante STATUS.ACTIVE
+      - magic_strings              # url = "http://api.com" → usar config/env
+      - hardcoded_credentials      # usuario/pass/token/key en el código
+      - hardcoded_urls             # URLs de APIs, dominios, servicios
+      - hardcoded_timeouts         # setTimeout(fn, 3000) → TIMEOUT_MS
+      - hardcoded_limits           # pageSize = 100 inline → config
+      - hardcoded_paths            # "/home/user/app" → variable de entorno
+      - hardcoded_ports            # app.listen(3000) → process.env.PORT
+      - hardcoded_env_names        # if (env === "production") → usar booleano de config
+    allowed:
+      - index_zero                 # arr[0], arr[1] en contexto obvio
+      - boolean_literals           # true / false
+      - empty_string_check         # === "" para verificar vacío
+      - mathematical_constants     # Math.PI y constantes matemáticas estándar
 
 # Fases activas — puedes deshabilitar fases si el proyecto no las necesita
 phases:
